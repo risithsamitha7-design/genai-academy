@@ -172,9 +172,45 @@ window.addEventListener('scroll', () => {
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
+    const root = document.documentElement;
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+        navbar.style.background = root.classList.contains('light-mode') ? 'rgba(255, 255, 255, 0.95)' : 'rgba(0, 0, 0, 0.95)';
     } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.85)';
+        navbar.style.background = root.classList.contains('light-mode') ? 'rgba(255, 255, 255, 0.85)' : 'rgba(0, 0, 0, 0.85)';
+    }
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const root = document.documentElement;
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    root.classList.add('light-mode');
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+}
+
+themeToggle.addEventListener('click', () => {
+    root.classList.toggle('light-mode');
+    
+    if (root.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    } else {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+    
+    // Update navbar background immediately
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = root.classList.contains('light-mode') ? 'rgba(255, 255, 255, 0.95)' : 'rgba(0, 0, 0, 0.95)';
+    } else {
+        navbar.style.background = root.classList.contains('light-mode') ? 'rgba(255, 255, 255, 0.85)' : 'rgba(0, 0, 0, 0.85)';
     }
 });
