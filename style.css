@@ -280,6 +280,16 @@ a {
     color: var(--white);
 }
 
+/* Courses link highlight */
+.nav-menu a.nav-courses {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.nav-menu a.nav-courses::after {
+    width: 100%;
+}
+
 .nav-menu a::after {
     content: '';
     position: absolute;

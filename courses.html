@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - GenAI Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <img src="g-logo.png" alt="GenAI Academy" class="loader-logo">
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="g-logo.png" alt="GenAI Academy" class="nav-logo">
+                <span>GenAI Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#founders">Founders</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="btn btn-outline" id="loginBtn">Log In</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+        <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+
+    <!-- Courses Hero Section -->
+    <section class="courses-hero">
+        <div class="container">
+            <h1 class="section-title">Our Courses</h1>
+            <p class="section-subtitle">Master AI with our comprehensive curriculum</p>
+            
+            <!-- Search and Filter Section -->
+            <div class="search-filter-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="courseSearch" placeholder="Search courses..." placeholder="Search for courses, topics, or skills">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Courses</button>
+                    <button class="filter-btn" data-filter="beginner">Beginner</button>
+                    <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+                    <button class="filter-btn" data-filter="advanced">Advanced</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Grid Section -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Course Card 1 -->
+                <div class="course-card" data-level="beginner" data-category="programming">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="course-badge">Popular</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Beginner</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 8 weeks</span>
+                        </div>
+                        <h3>Python for AI</h3>
+                        <p>Master Python programming fundamentals with a focus on AI/ML libraries like NumPy, Pandas, and Matplotlib.</p>
+                        <div class="course-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Programming</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">Free</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div class="course-card" data-level="beginner" data-category="ai">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Beginner</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 6 weeks</span>
+                        </div>
+                        <h3>Introduction to AI</h3>
+                        <p>Learn the fundamentals of Artificial Intelligence, machine learning concepts, and real-world applications.</p>
+                        <div class="course-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">ML Basics</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">Free</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="course-card" data-level="intermediate" data-category="ml">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="course-badge">New</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Intermediate</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 10 weeks</span>
+                        </div>
+                        <h3>Machine Learning Fundamentals</h3>
+                        <p>Deep dive into supervised and unsupervised learning, model evaluation, and feature engineering techniques.</p>
+                        <div class="course-tags">
+                            <span class="tag">ML</span>
+                            <span class="tag">Scikit-learn</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$49</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 4 -->
+                <div class="course-card" data-level="intermediate" data-category="dl">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Intermediate</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 12 weeks</span>
+                        </div>
+                        <h3>Deep Learning with TensorFlow</h3>
+                        <p>Build neural networks from scratch. Learn CNNs, RNNs, and implement them using TensorFlow and Keras.</p>
+                        <div class="course-tags">
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">TensorFlow</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$79</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 5 -->
+                <div class="course-card" data-level="advanced" data-category="genai">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="course-badge">Trending</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Advanced</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 14 weeks</span>
+                        </div>
+                        <h3>Generative AI Masterclass</h3>
+                        <p>Master GPT, DALL-E, Stable Diffusion. Build your own generative models and understand transformer architectures.</p>
+                        <div class="course-tags">
+                            <span class="tag">GenAI</span>
+                            <span class="tag">Transformers</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$129</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 6 -->
+                <div class="course-card" data-level="intermediate" data-category="nlp">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Intermediate</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 10 weeks</span>
+                        </div>
+                        <h3>NLP & Chatbot Development</h3>
+                        <p>Build intelligent chatbots, sentiment analyzers, and language understanding systems using modern NLP techniques.</p>
+                        <div class="course-tags">
+                            <span class="tag">NLP</span>
+                            <span class="tag">Chatbots</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$69</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 7 -->
+                <div class="course-card" data-level="intermediate" data-category="cv">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Intermediate</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 11 weeks</span>
+                        </div>
+                        <h3>Computer Vision</h3>
+                        <p>Image recognition, object detection, and visual AI applications using OpenCV and deep learning frameworks.</p>
+                        <div class="course-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">OpenCV</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$79</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 8 -->
+                <div class="course-card" data-level="advanced" data-category="dl">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="course-badge">Advanced</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Advanced</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 16 weeks</span>
+                        </div>
+                        <h3>PyTorch for Deep Learning</h3>
+                        <p>Master PyTorch framework for building cutting-edge deep learning models with hands-on projects and research papers.</p>
+                        <div class="course-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Research</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$149</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 9 -->
+                <div class="course-card" data-level="beginner" data-category="data">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Beginner</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 6 weeks</span>
+                        </div>
+                        <h3>Data Science Essentials</h3>
+                        <p>Learn data manipulation, visualization, and statistical analysis using Python libraries and real datasets.</p>
+                        <div class="course-tags">
+                            <span class="tag">Data Science</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$39</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 10 -->
+                <div class="course-card" data-level="advanced" data-category="genai">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Advanced</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 12 weeks</span>
+                        </div>
+                        <h3>AI Project Lab</h3>
+                        <p>End-to-end AI project development from idea to deployment. Work with real-world datasets and industry mentors.</p>
+                        <div class="course-tags">
+                            <span class="tag">Projects</span>
+                            <span class="tag">Deployment</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$199</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 11 -->
+                <div class="course-card" data-level="intermediate" data-category="nlp">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="course-badge">Hot</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Intermediate</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 9 weeks</span>
+                        </div>
+                        <h3>Large Language Models</h3>
+                        <p>Understand LLMs, fine-tuning, prompt engineering, and building applications with GPT and open-source models.</p>
+                        <div class="course-tags">
+                            <span class="tag">LLMs</span>
+                            <span class="tag">GPT</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">$99</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 12 -->
+                <div class="course-card" data-level="beginner" data-category="ai">
+                    <div class="course-image">
+                        <div class="course-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level"><i class="fas fa-signal"></i> Beginner</span>
+                            <span class="course-duration"><i class="fas fa-clock"></i> 4 weeks</span>
+                        </div>
+                        <h3>AI Ethics & Responsible AI</h3>
+                        <p>Explore ethical considerations, bias in AI, fairness, transparency, and building responsible AI systems.</p>
+                        <div class="course-tags">
+                            <span class="tag">Ethics</span>
+                            <span class="tag">Responsible AI</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">Free</div>
+                            <button class="btn btn-primary btn-sm">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No courses found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="g-logo.png" alt="GenAI Academy" class="footer-logo">
+                    <p>GenAI Academy — Future Starts Here. Empowering the next generation of AI innovators through education and community.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#founders">Founders</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Programs</h4>
+                    <a href="#">Generative AI</a>
+                    <a href="#">Deep Learning</a>
+                    <a href="#">NLP & Chatbots</a>
+                    <a href="#">Computer Vision</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com/@GenAIAcademy-q7e" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com/profile.php?id=61580930053366" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://tiktok.com/@sas97806?lang=en-GB" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://github.com/risithsamitha7-design" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GenAI Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="modal-close" id="loginClose">&times;</span>
+            <h2>Welcome Back</h2>
+            <p>Log in to your GenAI Academy account</p>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Log In</button>
+                <p class="auth-switch">Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="modal-close" id="signupClose">&times;</span>
+            <h2>Join GenAI Academy</h2>
+            <p>Create your free account and start learning</p>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                <p class="auth-switch">Already have an account? <a href="#" id="switchToLogin">Log In</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="courses.js"></script>
+</body>
+</html>
